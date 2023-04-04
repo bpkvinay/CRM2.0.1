@@ -1,6 +1,7 @@
 package Uttiles;
 
 import java.time.Duration;
+import java.util.concurrent.TimeUnit;
 
 import org.junit.rules.Timeout;
 import org.openqa.selenium.WebDriver;
@@ -22,12 +23,12 @@ public class WaitUtility {
 	
 	   public void WaitForElement(WebElement elementaddress,long seconds)
 	   {
-       WebDriverWait wait= new WebDriverWait(driver,Duration.ofSeconds(seconds));
+       WebDriverWait wait= new WebDriverWait(driver,seconds);
 	   wait.until(ExpectedConditions.visibilityOf(elementaddress));
 	   }    
  
 	   public void implcitywait(long sec) {
 		   
-		   driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(sec));
-	   }
-}
+		   driver.manage().timeouts().implicitlyWait(sec, TimeUnit.SECONDS);
+	   
+	   }}
