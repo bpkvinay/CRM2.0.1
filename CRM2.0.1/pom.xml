@@ -42,6 +42,13 @@
     <version>4.13.1</version>
     <scope>test</scope>
 </dependency>
+
+<dependency>
+    <groupId>io.github.bonigarcia</groupId>
+    <artifactId>webdrivermanager</artifactId>
+    <version>3.8.1</version>
+</dependency>
+
 <dependency>
     <groupId>io.cucumber</groupId>
     <artifactId>cucumber-jvm-deps</artifactId>

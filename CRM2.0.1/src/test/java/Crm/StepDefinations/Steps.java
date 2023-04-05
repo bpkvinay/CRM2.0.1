@@ -1,38 +1,30 @@
 package Crm.StepDefinations;
 
+import java.io.IOException;
+
+import Crm.PageObjects.LoginPage;
 import cucumber.api.java.en.*;
 
-public class Steps {
-      
+public class Steps extends BaseClass{
+
+	public LoginPage loginpage;
+	
 	@Given("when user launch the browser")
-	public void when_user_launch_the_browser() {
-	    
+	public void when_user_launch_the_browser() throws IOException {
+		launchbrowser() ;
 	}
 
 	@When("Users open url")
-	public void users_open_url() {
-	    
+	public void users_open_url() throws IOException {
+	    launchapp();
 	}
-
-	@When("Enter {string} in Username textfield")
-	public void enter_in_username_textfield(String string) {
-	  
-	}
-
-	@When("Enter {string} in password textfield")
-	public void enter_in_password_textfield(String string) {
-	   
-	}
-
-	@When("I click on Login button")
-	public void i_click_on_login_button() {
-	    
-	}
-
-	@Then("I validate the Homepage")
-	public void i_validate_the_homepage() {
-	  
-		
-		
-	}
+	
+	 @And("Enter {string} and {string} into the TF and click on loginButton")
+	 public void enter_and_into_the_tf_and_click_on_login_button(String username, String password) throws IOException {
+	     Loginapplication();
+	 }
 }
+	
+
+	
+

@@ -9,11 +9,17 @@ import cucumber.api.junit.Cucumber;
 
 
 @RunWith(Cucumber.class)
-@CucumberOptions( )
-
-
-
-
+@CucumberOptions(
+		
+plugin = {"pretty"
+        , "html:target/cucumber/report.html"
+        , "summary"}
+,features = {"src\\test\\resources\\Features"}
+,glue = {"Crm.StepDefinations"}
+,dryRun=true
+,monochrome=true
+,tags = "@test"
+		)
 
 public class Bddrunner {
   
